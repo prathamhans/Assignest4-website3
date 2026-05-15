@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: #111;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.main-wrapper {
+    background-color: #f5f5f7;
+    border-radius: 40px;
+    padding: 40px 40px 40px 10px;
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    max-width: 1300px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    padding: 0 10px;
+    width: 40px;
+}
+
+.sidebar-text {
+    transform: rotate(-90deg);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    white-space: nowrap;
+}
+
+/* About Card */
+.about-card {
+    background-color: #8b8ad5;
+    border-radius: 32px;
+    padding: 40px;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: visible;
+}
+
+.corner-cutout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 50px;
+    background-color: #f5f5f7;
+    border-bottom-right-radius: 20px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 24px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #111;
+    gap: 10px;
+}
+
+/* Smooth inversion for the corner cutout */
+.corner-cutout::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: -5px -5px 0 5px #f5f5f7;
+}
+.corner-cutout::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: -5px -5px 0 5px #f5f5f7;
+}
+
+.icon-spin {
+    font-size: 1.1rem;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.outer-ring {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    border: 5px solid white;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #f5a6f5; /* pink */
+    overflow: hidden;
+    position: relative;
+}
+
+.inner-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    mix-blend-mode: multiply;
+}
+
+/* About Footer */
+.about-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.name-section h2 {
+    font-size: 3.5rem;
+    line-height: 1.05;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.name-section p {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.9);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.5px;
+}
+
+.record-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.record-badge svg {
+    transform: rotate(-15deg);
+    transition: transform 0.3s;
+}
+
+.record-badge:hover svg {
+    transform: rotate(345deg);
+    transition: transform 1s linear;
+}
+
+
+/* Right Content */
+.right-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.top-bar {
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 6rem;
+    font-weight: 800;
+    color: #111;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -2px;
+}
+
+.page-title .corner-bracket {
+    position: absolute;
+    top: 5px;
+    right: -30px;
+    width: 20px;
+    height: 20px;
+    border-top: 4px solid #111;
+    border-right: 4px solid #111;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 160px);
+    gap: 20px;
+    height: 100%;
+}
+
+.grid-item {
+    border-radius: 28px;
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.grid-item .corner-bracket {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid rgba(0,0,0,0.15);
+    border-right: 2px solid rgba(0,0,0,0.15);
+}
+
+.grid-item h3 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.grid-item p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Specific Cards */
+.flamingo-card {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    padding: 0;
+    display: block;
+}
+
+.flamingo-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+    z-index: 1;
+}
+
+.play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-button i {
+    color: #111;
+    font-size: 1.5rem;
+    margin-left: 5px; /* Visual center for play icon */
+}
+
+.projects-card {
+    grid-column: 3;
+    grid-row: 1;
+    background-color: #b4e4e4;
+    color: #111;
+}
+
+.awards-card {
+    grid-column: 3;
+    grid-row: 2;
+    background-color: #9578c7;
+    color: white;
+}
+.awards-card .corner-bracket {
+    border-color: rgba(255,255,255,0.4);
+}
+
+.clients-card {
+    grid-column: 1;
+    grid-row: 3;
+    background-color: #5d5d5d;
+    color: white;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 35px;
+}
+.clients-card .apple-logo {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+}
+.clients-card .corner-bracket {
+    border-color: rgba(255,255,255,0.3);
+}
+.clients-card p {
+    font-weight: 400;
+}
+
+.sphere-card {
+    grid-column: 2;
+    grid-row: 3;
+    background-color: #0a0a0a;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sphere-card img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.global-awards-card {
+    grid-column: 3;
+    grid-row: 3;
+    background-color: #ffcc66;
+    color: #111;
+}
